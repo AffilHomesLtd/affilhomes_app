@@ -11,8 +11,8 @@ const TopSellers = () => {
   const scrollContainer = scrollRef.current;
   useEffect(() => {
     const scrollSpeed = 3; // pixels per interval
-    const interval = setInterval(() => {
-      if (scrollContainer) {
+    if (scrollContainer) {
+      const interval = setInterval(() => {
         scrollContainer.scrollLeft += scrollSpeed * scrollDirection;
 
         // Check if reached either end
@@ -23,10 +23,8 @@ const TopSellers = () => {
         ) {
           setScrollDirection((prev) => -prev); // reverse direction
         }
-      }
-    }, 10); // controls speed (lower is faster)
-    console.log(scrollContainer.scrollLeft + scrollContainer.clientWidth);
-    console.log(scrollContainer.scrollWidth);
+      }, 10);
+    }
 
     return () => clearInterval(interval); // clean up
   }, [scrollDirection]);
