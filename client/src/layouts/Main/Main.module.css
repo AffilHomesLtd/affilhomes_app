@@ -1,0 +1,31 @@
+.main_layout {
+  /* height: 100vh; */
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.sidebar {
+  position: fixed;
+  left: 0;
+  width: 200px;
+  overflow: hidden;
+  overflow-y: auto;
+  height: calc(100vh - 60px);
+  margin-bottom: 20px;
+}
+.main_body {
+  margin-top: 60px;
+  margin-left: 205px;
+}
+@media (max-width: 810px) {
+  .main_body {
+    margin-left: 0;
+  }
+  .sidebar {
+    display: none;
+  }
+}

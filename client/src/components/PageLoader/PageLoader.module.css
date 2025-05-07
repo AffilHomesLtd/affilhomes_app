@@ -1,0 +1,42 @@
+.loader_container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.quote_by {
+  display: grid;
+  grid-template-columns: 50px 1fr 50px;
+  gap: 10px;
+  /* background: #02eab2; */
+  align-items: center;
+  justify-content: end;
+}
+.quote_by hr {
+  height: 1px;
+  width: 50px;
+  border: none;
+  background: #ccc;
+}
+.quote_by p {
+  text-align: center;
+  /* background: #000; */
+}
+.loader {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px solid #000;
+  animation: spin 1s infinite linear;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

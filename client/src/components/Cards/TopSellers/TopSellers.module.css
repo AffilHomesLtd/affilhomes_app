@@ -1,0 +1,71 @@
+.top_sellers_wrapper {
+  width: 100%;
+  background: #999;
+  padding: 20px 0;
+}
+
+.top_sellers_header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.top_sellers_container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.top_sellers_container::-webkit-scrollbar {
+  display: none;
+}
+
+.top_sellers {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 20px;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+
+.nav_btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s ease;
+  display: none;
+}
+
+.nav_btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.left {
+  left: 20px;
+}
+
+.right {
+  right: 20px;
+}
+
+@media (min-width: 1024px) {
+  .nav_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

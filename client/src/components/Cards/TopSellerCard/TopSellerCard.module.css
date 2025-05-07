@@ -1,0 +1,69 @@
+.seller_card {
+  flex: 0 0 auto;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  width: 170px;
+  min-width: 170px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.seller_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.seller_image {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+  border: 4px solid #eb793d;
+}
+
+.seller_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.seller_info h2 {
+  font-size: 14px;
+  margin: 10px 0;
+  white-space: nowrap;
+  color: #333;
+}
+
+.seller_info p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.seller_stats {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.contact_button {
+  background: linear-gradient(135deg, #eb793d, #cf622c);
+  color: white;
+  border: none;
+  padding: 7px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact_button:hover {
+  background: linear-gradient(135deg, #cf622c, #eb793d);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
