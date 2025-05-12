@@ -1,47 +1,32 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './TopSellers.module.css';
 import { topSellers } from '../../../constants/topSellers';
 import TopSellerCard from '../TopSellerCard/TopSellerCard';
 import { MdWorkspacePremium } from 'react-icons/md';
 
 const TopSellers = () => {
-  const scrollRef = useRef(null);
-  const [scrollDirection, setScrollDirection] = useState(1); // 1 = right, -1 = left
-
-  const scrollContainer = scrollRef.current;
+  const [slide, setSlide] = useState([]);
   useEffect(() => {
-    const scrollSpeed = 3; // pixels per interval
-    if (scrollContainer) {
-      const interval = setInterval(() => {
-        scrollContainer.scrollLeft += scrollSpeed * scrollDirection;
-
-        // Check if reached either end
-        if (
-          scrollContainer.scrollLeft + scrollContainer.clientWidth <=
-            scrollContainer.scrollWidth ||
-          scrollContainer.scrollLeft <= 0
-        ) {
-          setScrollDirection((prev) => -prev); // reverse direction
-        }
-      }, 10);
-    }
-
-    return () => clearInterval(interval); // clean up
-  }, [scrollDirection]);
-
+    setSlide([...topSellers, ...topSellers]);
+  }, [topSellers]);
   return (
     <section className={styles.top_sellers_wrapper}>
       <div className={styles.top_sellers_header}>
-        <MdWorkspacePremium size={24} />
-        <p>Top Property Sellers</p>
+        <MdWorkspacePremium />
+        <p>Verified Sellers</p>
       </div>
       <div className={styles.top_sellers_container}>
-        <div
-          className={styles.top_sellers}
-          ref={scrollRef}>
-          {topSellers.map((seller) => (
+        <div className={styles.top_sellers}>
+          {slide?.map((seller, index) => (
             <TopSellerCard
-              key={seller.id}
+              key={index}
+              id={index}
+              name={seller.name}
+              title={seller.title}
+              experience={seller.experience}
+              properties={seller.properties}
+              image={seller.image}
+              rating={seller.rating}
               seller={seller}
             />
           ))}

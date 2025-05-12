@@ -1,11 +1,15 @@
 :root {
   --primary-color: rgb(255, 204, 0);
+  --secondary-color: #1c1c1c;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto';
+}
+a {
+  text-decoration: none;
 }
 body {
   background: #000;

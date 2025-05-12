@@ -1,5 +1,4 @@
 .home {
-  /* background: #fff; */
   padding: 10px 20px;
 }
 .top_section {
@@ -49,9 +48,6 @@
   color: var(--primary-color);
 }
 @keyframes slide {
-  0% {
-    transform: translateX(150%);
-  }
   100% {
     transform: translateX(-120%);
   }
@@ -92,6 +88,9 @@
   overflow: hidden;
   width: 100%;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .info::before,
 .info::after {
@@ -111,16 +110,23 @@
 }
 .info p {
   display: inline-block;
-  animation: slide 13s linear infinite;
   color: #fff;
   font-size: 15px;
   padding: 10px;
 }
-
 .info p b:first-child {
   margin-right: 25%;
 }
 
+@media (max-width: 600px) {
+  .info {
+    display: block;
+  }
+  .info p {
+    transform: translateX(110%);
+    animation: slide 13s linear infinite;
+  }
+}
 @media (max-width: 810px) {
   .home {
     width: 90%;

@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar, Sidebar } from '../../components';
 import { Outlet } from 'react-router-dom';
 import styles from './Main.module.css';
+import { FaCircle } from 'react-icons/fa6';
 const Main = () => {
   return (
     <div className={styles.main_layout}>
@@ -14,8 +15,22 @@ const Main = () => {
         </aside>
         <Outlet />
       </main>
-      <footer>
+      <footer className={styles.footer}>
         <p>@ 2025 Copyright</p>
+        <div className={styles.footer_links}>
+          <p>
+            <FaCircle /> Terms and Conditions{' '}
+          </p>
+          <p>
+            <FaCircle /> Privacy
+          </p>
+          <p>
+            <FaCircle /> Policy
+          </p>
+          <p>
+            <FaCircle /> Customer Care
+          </p>
+        </div>
       </footer>
     </div>
   );

@@ -1,0 +1,220 @@
+.property_card {
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 3px #0000004d, 3px 3px 5px #00000069;
+  overflow: hidden;
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.discount {
+  position: absolute;
+  z-index: 2;
+  background: #ff0000;
+  left: 0;
+  font-size: 11px;
+  top: 30px;
+  padding: 7px 20px;
+  color: #fff;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.seller_user {
+  position: absolute;
+  z-index: 1;
+  background: #fff;
+  right: 20px;
+  top: 20px;
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.seller_img {
+  position: relative;
+}
+.seller_img img {
+  width: 35px;
+  object-fit: cover;
+}
+.seller_img .verified {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  background: #fff;
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+}
+.seller_img .icon {
+  color: #048f07;
+  font-size: 17px;
+}
+.main_details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.price_rent_type {
+  display: flex;
+  justify-content: space-between;
+}
+.icon {
+  transition: 0.5s ease;
+  transform: rotate(0);
+}
+.rotate {
+  transform: rotate(180deg);
+}
+.property_card_img_section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  z-index: 0;
+}
+.property_card_img_section {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+.interiors_section {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  font-size: 12px;
+  justify-content: space-around;
+  padding: 5px;
+  color: #fff;
+  & .interior {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  & .interior svg {
+    font-size: 14px;
+  }
+}
+.overlay {
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background: #5e5e5ea6;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+  width: 100%;
+  font-size: 15px;
+  transition: opacity 0.3s ease, height 0.3s linear;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+}
+.property_card_img_section:hover .overlay {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  opacity: 1;
+  height: 100%;
+}
+div.overlay svg {
+  font-size: 25px;
+  color: var(--primary-color);
+}
+.property_card_info_section {
+  padding: 10px;
+}
+.main_details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.names {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.names h2 {
+  font-size: max(1.2vw, 16px);
+}
+.price {
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.property_card_info_section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.details,
+.availabilities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  transition: 0.3s ease;
+}
+h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 16px;
+  cursor: pointer;
+}
+hr {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.for {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.property_card svg {
+  font-size: 20px;
+  color: var(--primary-color);
+}
+.action {
+  margin-top: 10px;
+  display: flex;
+  justify-content: end;
+  gap: 10px;
+}
+.favorite {
+  border: 1px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.favorite svg {
+  color: var(--primary-color);
+}
+.action button {
+  border-radius: 6px;
+  padding: 5px 15px;
+  border: none;
+  cursor: pointer;
+}

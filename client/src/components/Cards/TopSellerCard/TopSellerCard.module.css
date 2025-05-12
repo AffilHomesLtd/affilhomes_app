@@ -1,35 +1,36 @@
 .seller_card {
+  cursor: pointer;
   flex: 0 0 auto;
   background: white;
   border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  width: 170px;
-  min-width: 170px;
+  width: var(--slide-width);
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   user-select: none;
+  -webkit-user-select: none;
+  position: relative;
+  overflow: hidden;
 }
-
-.seller_card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+.blur {
+  background: rgba(204, 204, 204, 0.705);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
-
 .seller_image {
   width: 70px;
   height: 70px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto 15px;
-  border: 4px solid #eb793d;
+  border: 4px solid var(--primary-color);
 }
-
 .seller_image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
 .seller_info h2 {
@@ -47,23 +48,42 @@
 
 .seller_stats {
   font-size: 13px;
-  color: #555;
-  margin-bottom: 15px;
+  background: #fff;
+  position: absolute;
+  bottom: 10px;
+  padding: 10px;
+  color: #999;
+  width: 90%;
+  left: 50%;
+  border-radius: 7px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
-
-.contact_button {
-  background: linear-gradient(135deg, #eb793d, #cf622c);
-  color: white;
-  border: none;
-  padding: 7px 10px;
-  border-radius: 30px;
-  cursor: pointer;
+.seller_stats p {
+  display: grid;
+  grid-template-columns: 19px 1fr;
+  gap: 10px;
+  font-size: 14px;
+}
+.seller_stats button {
+  margin-top: 5px;
+  padding: 5px 16px;
   font-size: 12px;
-  transition: all 0.3s ease;
+  color: #fff;
+  place-self: center;
+  background: #000;
+  border-radius: 22px;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
-
-.contact_button:hover {
-  background: linear-gradient(135deg, #cf622c, #eb793d);
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.verified_icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 22px;
+  color: #36e526;
 }

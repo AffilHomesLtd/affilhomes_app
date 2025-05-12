@@ -5,10 +5,11 @@ import { RiPhoneFill } from 'react-icons/ri';
 import { SwiperCard, TopSellers } from '../../components/Cards';
 import { FaLightbulb } from 'react-icons/fa';
 import { MdVerified } from 'react-icons/md';
+import { PropertiesList } from '../../components';
 const Home = () => {
   return (
     <div className={styles.home}>
-      <section className={styles.top_section}>
+      {/* <section className={styles.top_section}>
         <div className={styles.search_filter_container}>
           <div className={`${styles.search} ${styles.option}`}>
             <FiSearch />
@@ -27,7 +28,7 @@ const Home = () => {
             <span>Customer care service</span>
           </div>
         </div>
-      </section>
+      </section> */}
       <SwiperCard />
       <section className={styles.info_slide}>
         <span>
@@ -43,6 +44,9 @@ const Home = () => {
         </span>
       </section>
       <TopSellers />
+      <section>
+        <PropertiesList />
+      </section>
     </div>
   );
 };
