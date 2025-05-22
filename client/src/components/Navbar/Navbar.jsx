@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
     <div className={styles.navbar}>
       <div className={styles.navbar_logo_container}>
-        <img src={logo} />
+        <img src={logo} alt='logo_affilhome' />
       </div>
       <div className={`${styles.wallet} ${styles.navlist}`}>
         <LuWallet />

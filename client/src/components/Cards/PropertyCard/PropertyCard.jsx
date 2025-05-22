@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './PropertyCard.module.css';
 import { FaNairaSign, FaRegCalendarDays } from 'react-icons/fa6';
 import { formatShortPrice } from '../../../utils/formatters';
@@ -38,6 +39,7 @@ const PropertyCard = ({
   status,
   interiors,
   image,
+  id,
 }) => {
   const [isFavorite, setisFavorite] = useState(false);
   const [cardSection, setCardSection] = useState({
@@ -45,6 +47,7 @@ const PropertyCard = ({
     availability: false,
     interiors: false,
   });
+  const navigate = useNavigate();
   return (
     <AnimatePresence>
       <motion.div
@@ -67,7 +70,9 @@ const PropertyCard = ({
             </div>
           </div>
         </div>
-        <div className={styles.property_card_img_section}>
+        <div
+          className={styles.property_card_img_section}
+          onClick={() => navigate(`/property/find/details/${id}`)}>
           <AnimatePresence>
             <motion.div
               initial={{ opacity: 0 }}
@@ -94,7 +99,7 @@ const PropertyCard = ({
           </div>
           <img
             src={image.cover}
-            alt={seller_name || 'Property image'}
+            alt={name || 'Property image'}
           />
         </div>
         <div className={styles.property_card_info_section}>

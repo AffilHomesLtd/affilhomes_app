@@ -56,7 +56,11 @@ export const properties_list = [
     status: 'Available',
     image: {
       cover: cover1,
-      preview: [bungalowPreview1, bungalowPreview2, bungalowPreview3],
+      preview: [
+        // bungalowPreview1,
+        bungalowPreview2,
+        bungalowPreview3,
+      ],
     },
     interiors: {
       bedroom: 3,
