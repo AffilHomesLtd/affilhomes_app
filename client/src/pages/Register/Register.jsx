@@ -1,5 +1,4 @@
 import { Outlet } from 'react-router-dom';
-import SunburstLoader from '../../components/Loaders/SunBurstLoader/SunBurstLoader';
 import styles from './Register.module.css';
 import logo from '../../assets/images/logo_affilhome.png';
 import { FiLoader } from 'react-icons/fi';
@@ -16,7 +15,7 @@ const Register = () => {
           <div className={`${styles.completed} ${styles.step}`}>
             <FiLoader />
           </div>
-          <div className={`${styles.completed} ${styles.step}`}>
+          <div className={`${styles.current} ${styles.step}`}>
             <FiLoader />
           </div>
           <div className={`${styles.step_4} ${styles.step}`}>
