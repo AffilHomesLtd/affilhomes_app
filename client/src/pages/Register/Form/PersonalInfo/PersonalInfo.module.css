@@ -1,0 +1,9 @@
+.personal_info h2 {
+  color: #fff;
+  padding: 15px;
+}
+.form_fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

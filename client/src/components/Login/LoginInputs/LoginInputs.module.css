@@ -36,6 +36,7 @@
   }
 }
 .otp_btn {
+  position: relative;
   font-size: 13px;
   width: 100%;
   cursor: pointer;
@@ -45,7 +46,7 @@
   border: none;
   border-radius: 20px;
   padding: 8px;
-  &.unverified {
+  &:disabled {
     background: #484848;
     color: #eee;
     cursor: not-allowed;

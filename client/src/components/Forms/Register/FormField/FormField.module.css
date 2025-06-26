@@ -1,0 +1,56 @@
+.field {
+  border-radius: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background: #464646;
+  padding: 15px 20px;
+  & p {
+    color: #ccc;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+  }
+  font-family: var(--font-outfit);
+}
+.field.input {
+  flex-direction: column;
+  align-items: start;
+}
+.field.input .fieldType {
+  width: 100%;
+}
+.field.checkbox .fieldType {
+  border: none;
+}
+.fieldType {
+  padding-right: 15px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+  & input {
+    width: 100%;
+
+    &[type='checkbox'] {
+      width: auto;
+    }
+  }
+  & input,
+  & select {
+    color: #ccc;
+    font-size: 15px;
+    padding: 12px;
+    background: transparent;
+    outline: none;
+    border: none;
+  }
+  & select {
+    & option {
+      color: #000;
+    }
+  }
+}

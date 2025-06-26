@@ -11,9 +11,16 @@ const Login = () => {
     verified: false,
     password: '',
   });
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className={styles.login}>
-      <form className={styles.login_form_container}>
+      <form
+        className={styles.login_form_container}
+        onSubmit={onSubmitHandler}>
         <div className={styles.icon_wrap}>
           <RiLoginBoxLine />
         </div>
@@ -24,16 +31,20 @@ const Login = () => {
         </p>
 
         {/* Input fields */}
-        {loginFormInputsData.map((input) => (
-          <LoginInputs
-            label={input.label}
-            icon={input.icon}
-            type={input.type}
-            inputType={input.inputType}
-            otp={otp}
-            setOtp={setOtp}
-          />
-        ))}
+        {loginFormInputsData.map((input) =>
+          input.type === 'otpInput' && otp.verified ? (
+            <></>
+          ) : (
+            <LoginInputs
+              label={input.label}
+              icon={input.icon}
+              type={input.type}
+              inputType={input.inputType}
+              otp={otp}
+              setOtp={setOtp}
+            />
+          )
+        )}
         <button
           type="submit"
           className={`${styles.submit_btn} ${
