@@ -1,45 +1,40 @@
 :root {
   --step-progress: 60%;
-  /* --primary-color-2: #00b894; */
   --gray-dark: #222;
   --gray-light: #ccc;
   --progress-container-width: 250px;
 }
 
+/* === Main Container === */
 .register {
   font-family: var(--font-outfit);
   display: flex;
   flex-direction: column;
-  margin-top: 85px;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 120px);
   overflow-x: auto;
   background: var(--bg-color);
   color: #fff;
-  margin-left: calc(var(--progress-container-width) + 10px);
   border-radius: 20px;
+  margin: 85px 10px 0 calc(var(--progress-container-width) + 10px);
   padding-top: 20px;
-  margin-right: 10px;
 }
 
-/* Sidebar */
+/* === Sidebar === */
 .register aside {
   position: fixed;
-  top: 0;
-  left: 0;
-  margin-top: 100px;
-  margin-left: 10px;
-  border-radius: 20px;
-  padding: 20px 0;
-  height: calc(100vh - 110px);
+  top: 100px;
+  left: 10px;
+  height: calc(100vh - 120px);
   width: var(--progress-container-width);
-  overflow-y: auto;
-  background: #da9d9d;
   background: var(--bg-color);
-  display: flex;
-  justify-content: center;
+  border-radius: 20px;
+  overflow-y: auto;
+  padding: 1rem 0 1rem 1rem;
   z-index: 1;
+  display: flex;
 }
 
+/* === Progress Line and Steps === */
 .progress {
   position: relative;
   display: flex;
@@ -49,31 +44,17 @@
   height: max-content;
 }
 
-.progress_text {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  padding-left: 0.7rem;
-  height: max-content;
-  /* background: #333; */
-  p {
-    display: flex;
-    align-items: center;
-    height: 36px;
-  }
-}
-
 .step {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   border: 2px solid #333;
-  background: #222;
+  background: var(--gray-dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2;
   transition: 0.3s ease-in-out;
+  z-index: 2;
 }
 
 .step svg {
@@ -101,8 +82,8 @@
 
 .progressLine {
   position: absolute;
-  left: 50%;
   top: 0;
+  left: 50%;
   width: 4px;
   height: 100%;
   transform: translateX(-50%);
@@ -116,17 +97,27 @@
   z-index: 1;
 }
 
-/* Main form container */
-.step_content {
-  /* display: flex; */
-  /* width: 100%; */
-  padding: 1.3rem;
-  padding-bottom: 0;
-  padding-top: 0;
-  /* flex: 1; */
+/* === Step Labels === */
+.progress_text {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-left: 0.7rem;
+  height: max-content;
 }
 
-/* Footer */
+.progress_text p {
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+
+/* === Step Content Section === */
+.step_content {
+  padding: 1.3rem 1.3rem 0;
+}
+
+/* === Footer === */
 .register footer {
   margin-top: auto;
   text-align: center;
@@ -138,8 +129,8 @@
 .register footer section {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   justify-content: center;
+  gap: 0.5rem;
 }
 
 .register footer img {
@@ -153,15 +144,69 @@
 
 .register footer hr {
   width: 100%;
-  background: #333;
-  border: none;
   height: 1px;
+  border: none;
+  background: #333;
 }
+
+/* === Responsive Sidebar === */
 @media (max-width: 720px) {
   :root {
-    --progress-container-width: 80px;
+    --progress-container-width: 60px;
   }
+
   .progress_text {
     display: none;
+  }
+
+  .register {
+    margin-left: calc(var(--progress-container-width) + 5px);
+    margin-right: 5px;
+    padding: 1rem 0.5rem;
+  }
+
+  .register aside {
+    padding-left: 0.5rem;
+    padding-right: 0;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  .progress {
+    gap: 25px;
+  }
+
+  .step {
+    width: 30px;
+    height: 30px;
+  }
+
+  .step svg {
+    font-size: 14px;
+  }
+
+  .step_content {
+    padding: 1rem 0.5rem 0;
+  }
+
+  .register footer {
+    padding: 1rem 0.5rem;
+  }
+
+  .register footer section {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .register footer img {
+    width: 50px;
+  }
+
+  .register footer h2 {
+    font-size: 1rem;
+  }
+
+  .progressLine {
+    width: 2px;
   }
 }

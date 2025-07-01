@@ -1,7 +1,56 @@
-.personal_info{
-  
+.personal_info {
   h2 {
-  color: #fff;
-  padding: 15px;
-}}
+    color: #fff;
+    padding: 15px;
+  }
+}
 
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 10px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Primary button */
+.actions button[type='submit'] {
+  background: var(--primary-color-2);
+  color: #fff;
+}
+
+.actions button[type='submit']:hover {
+  background: var(--primary-color); /* Slightly darker hover */
+}
+
+/* Secondary/back button */
+.actions button[type='button'] {
+  background: transparent;
+  color: var(--gray-light);
+  border: 1px solid var(--gray-light);
+}
+
+.actions button[type='button']:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 720px) {
+  .actions {
+    justify-content: center;
+  }
+
+  .actions button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
