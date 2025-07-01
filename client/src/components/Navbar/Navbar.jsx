@@ -5,6 +5,7 @@ import { RiHome5Line, RiMessengerLine, RiUser3Line } from 'react-icons/ri';
 import styles from './Navbar.module.css';
 import logo from '../../assets/images/logo_affilhome.png';
 import { MdMenu } from 'react-icons/md';
+import { NavLink, useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const [screen, setScreen] = useState(window.innerWidth);
   const [isMobile, setIsMobile] = useState(null);
@@ -14,13 +15,21 @@ const Navbar = () => {
     };
     window.addEventListener('resize', handleResize);
     handleResize();
-    setIsMobile(screen <= 810);
+    setIsMobile(screen <= 768);
     return () => window.removeEventListener('resize', handleResize);
   }, [screen]);
+
+  const navigate = useNavigate();
+
   return (
     <div className={styles.navbar}>
       <div className={styles.navbar_logo_container}>
-        <img src={logo} alt='logo_affilhome' />
+        <NavLink to="/">
+          <img
+            src={logo}
+            alt="logo_affilhome"
+          />
+        </NavLink>
       </div>
       <div className={`${styles.wallet} ${styles.navlist}`}>
         <LuWallet />
@@ -43,7 +52,9 @@ const Navbar = () => {
             </div>
           </>
         )}
-        <div className={`${styles.account} ${styles.navlist}`}>
+        <div
+          className={`${styles.account} ${styles.navlist}`}
+          onClick={() => navigate('/auth')}>
           <RiUser3Line />
           <p>Account</p>
         </div>

@@ -19,7 +19,7 @@ const FormField = ({
           <select>
             <option
               value=""
-              disabled>
+              >
               Select {label}
             </option>
             {options.map((option) => (

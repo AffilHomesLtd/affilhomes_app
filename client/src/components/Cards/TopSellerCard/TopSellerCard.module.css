@@ -64,7 +64,7 @@
 }
 .seller_stats p {
   display: grid;
-  grid-template-columns: 19px 1fr;
+  grid-template-columns: auto 1fr;
   gap: 10px;
   font-size: 14px;
 }

@@ -109,7 +109,7 @@ const PersonalInfo = () => {
         mainText="Customer Info"
         subtext="There valued customer we are glad to help you sell, buy, rent and manage your real estate properties, but for you to proceed we have to ensure that your are eligible. Please do well to contact us when ever you encounter any difficulty during vetting process. Thank you for choosing Affilhomes LTD."
       />
-      <form>
+      <form className='form-container'>
         {personalInfoInputsFields.map((form) => (
           <FormContainer
             key={form.title}

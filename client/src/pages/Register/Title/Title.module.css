@@ -1,8 +1,9 @@
 .title {
   color: #fff;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;align-items:start;
   gap: 20px;
+
 }
 .title h1 {
   color: var(--primary-color-2);

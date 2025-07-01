@@ -1,41 +1,79 @@
 import { Outlet } from 'react-router-dom';
 import styles from './Register.module.css';
 import logo from '../../assets/images/logo_affilhome.png';
-import { FiLoader } from 'react-icons/fi';
+import {
+  FiCheck,
+  FiUser,
+  FiShield,
+  FiImage,
+  FiHome,
+  FiShuffle,
+  FiCreditCard,
+} from 'react-icons/fi';
+import { MdVerifiedUser } from 'react-icons/md';
+import {} from 'react-icons/hi';
+
 const Register = () => {
-  document.documentElement.style.setProperty('--step-1', '40%');
+  const stepPercent = 0;
+  const isStep1Done = false;
+  const isStep2Done = false;
+  const isStep3Done = false;
+  const isStep4Done = false;
+  document.documentElement.style.setProperty(
+    '--step-progress',
+    `${stepPercent}%`
+  );
+  useEffect(() => {}, []);
+
   return (
     <div className={styles.register}>
       <aside>
         <div className={styles.progress}>
-          <div className={styles.progress_line}></div>
-          <div className={`${styles.uncompleted} ${styles.step}`}>
-            <FiLoader />
+          <div className={`${styles.step} ${styles.completed}`}>
+            {isStep1Done ? <FiCheck /> : <FiUser />}
           </div>
-          <div className={`${styles.completed} ${styles.step}`}>
-            <FiLoader />
+          <div className={`${styles.step} ${styles.completed}`}>
+            {isStep2Done ? <FiCheck /> : <MdVerifiedUser />}
           </div>
-          <div className={`${styles.current} ${styles.step}`}>
-            <FiLoader />
+          <div className={`${styles.step} ${styles.active}`}>
+            {isStep3Done ? <FiCheck /> : <FiCreditCard />}
           </div>
-          <div className={`${styles.step_4} ${styles.step}`}>
-            <FiLoader />
+          <div className={styles.step}>
+            <FiImage />
           </div>
-          <div className={`${styles.step_5} ${styles.step}`}>
-            <FiLoader />
+          <div className={styles.step}>
+            <FiHome />
           </div>
+          <div className={styles.progressLine}></div>
+        </div>
+        <div className={styles.progress_text}>
+          <p>Personal Info</p>
+          <p>KYC Verification</p>
+          <p>Transaction Management</p>
+          <p>Profile Setup</p>
+          <p>Review</p>
         </div>
       </aside>
-      <div className={styles.form}>
+
+      <section className={styles.step_content}>
         <Outlet />
+      </section>
+
+      <div className={styles.actions}>
+        <button>Validate</button>
+        <button>Back</button>
       </div>
+
       <footer>
         <hr />
         <section>
-          <img src={logo} />
+          <img
+            src={logo}
+            alt="Affilhomes logo"
+          />
           <h2>Affilhomes</h2>
         </section>
-        <p>Copyright 2025 - All right reserved</p>
+        <p>Copyright 2025 - All rights reserved</p>
       </footer>
     </div>
   );
