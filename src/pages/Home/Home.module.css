@@ -1,0 +1,138 @@
+.home {
+  padding: 10px 20px;
+  /* width: 100%; */
+}
+.top_section {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  padding: 5px;
+}
+.search_filter_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #fff;
+  height: 35px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.search {
+  border-radius: 50%;
+  width: 35px;
+}
+.filter {
+  padding: 0 15px;
+  display: flex;
+  gap: 20px;
+  border-radius: 20px;
+}
+.customer_service {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.slide_text {
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slide_text span {
+  padding: 0 20px;
+  color: var(--primary-color);
+}
+@keyframes slide {
+  100% {
+    transform: translateX(-120%);
+  }
+}
+.text {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+/* info text slider*/
+.info_slide {
+  margin: 20px 0;
+  white-space: nowrap;
+  color: #fff;
+  background: #999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.info_slide span {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  font-size: 20px;
+  z-index: 5;
+  color: var(--primary-color);
+}
+.info_slide span:first-child {
+  left: 10px;
+}
+.info_slide span:last-child {
+  right: 10px;
+}
+.info {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-inter);
+}
+.info::before,
+.info::after {
+  width: 45px;
+  background: #999;
+  height: 100%;
+  content: '';
+  position: absolute;
+  filter: blur(4px);
+  z-index: 3;
+}
+.info::before {
+  left: -3px;
+}
+.info::after {
+  right: -3px;
+}
+.info p {
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+  padding: 10px;
+}
+.info p b:first-child {
+  margin-right: 25%;
+}
+
+@media (max-width: 600px) {
+  .info {
+    display: block;
+  }
+  .info p {
+    transform: translateX(110%);
+    animation: slide 13s linear infinite;
+  }
+}
+@media (max-width: 810px) {
+  .home {
+    overflow: hidden;
+    /* width: 90%; */
+    /* margin: 0px auto; */
+  }
+}

@@ -1,0 +1,18 @@
+.otp_input_fields {
+  /* margin-top: 20px; */
+  width: 100%;
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+.otp_input_fields input {
+  width: 35px;
+  height: 35px;
+  border-radius: 6px;
+  text-align: center;
+  background: var(--input-bg);
+  font-size: 15px;
+  outline: var(--input-outline);
+  border: 1px solid var(--input-outline);
+  color: #fff;
+}

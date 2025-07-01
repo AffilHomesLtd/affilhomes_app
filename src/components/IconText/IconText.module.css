@@ -1,0 +1,11 @@
+.detail,
+.status,
+.interior,
+.payment_type {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #7e7e7e;
+  font-style: italic;
+  font-size: 14px;
+}

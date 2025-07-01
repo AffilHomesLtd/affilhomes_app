@@ -1,0 +1,50 @@
+.navbar {
+  display: flex;
+  /* justify-content: space-between; */
+  background: #261c009a;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  margin: 0 2px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid #999999;
+  font-size: 13px;
+  font-weight: 400;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-family: var(--font-sen);
+}
+.navbar_logo_container {
+  flex: 1;
+}
+.navbar_logo_container img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  object-position: center center;
+  cursor: pointer;
+}
+.navbar .contents {
+  display: flex;
+  gap: 10px;
+  color: #fff;
+}
+.navbar svg {
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+.navlist {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.wallet {
+  transition: color 0.3s ease;
+  color: #fff;
+}
+@media (max-width: 500px) {
+  .account p {
+    display: none;
+  }
+}

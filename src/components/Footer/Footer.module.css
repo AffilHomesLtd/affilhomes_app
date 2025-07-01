@@ -1,0 +1,83 @@
+.footer {
+  background-color: #0a0a0a;
+  color: #f0f0f0;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.topSection {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  border-bottom: 1px solid #333;
+  padding-bottom: 1.5rem;
+}
+
+.brand h2 {
+  margin: 0;
+  color: var(--primary-color-2);
+}
+
+.brand p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 0.4rem;
+}
+
+.links {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.links h4 {
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  color: #ccc;
+}
+
+.icon {
+  font-size: 0.4rem;
+  color: var(--primary-color-2);
+}
+
+.bottomSection {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: #aaa;
+  gap: 1rem;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.socials svg {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.socials svg:hover {
+  color: var(--primary-color-2);
+}

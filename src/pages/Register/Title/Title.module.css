@@ -1,0 +1,27 @@
+.title {
+  color: #fff;
+  display: flex;
+  flex-direction: column;align-items:start;
+  gap: 20px;
+
+}
+.title h1 {
+  color: var(--primary-color-2);
+  font-family: var(--font-syne);
+  font-weight: 600;
+  line-height: 42px;
+  font-size: 30px;
+}
+.title p {
+  font-family: var(--font-outfit);
+  color: #b9b9b9;
+  font-size: 16px;
+  line-height: 26px;
+}
+.title hr {
+  height: 1px;
+  background: #333;
+  width: 100%;
+  margin-bottom: 20px;
+  border: none;
+}

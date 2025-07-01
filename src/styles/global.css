@@ -1,0 +1,32 @@
+:root {
+  --primary-color: #ffcc00;
+  --primary-color-2: #ffa600;
+  --secondary-color: #1c1c1c;
+  --bg-color:rgba(255, 195, 0, 0.15);
+  --bg-shadow: rgba(0, 0, 0, 0.3) 0px -4px 6px 0px inset, rgba(0, 0, 0, 0.15) 4px 4px 20px 0px;
+  --font-inter: 'Inter', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-sen: 'Sen', sans-serif;
+  --font-syne: 'Syne', sans-serif;
+  --font-work-sans: 'Work Sans', sans-serif;
+  --text-small: clamp(12px, 1.1vw, 15px);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+body {
+  background: #000;
+}
+button,
+body {
+  font-family: var(--font-sen);
+}
+.form-container{
+    height:calc(100vh - 345px);overflow-y:auto
+
+}

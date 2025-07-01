@@ -1,0 +1,167 @@
+:root {
+  --step-progress: 60%;
+  /* --primary-color-2: #00b894; */
+  --gray-dark: #222;
+  --gray-light: #ccc;
+  --progress-container-width: 250px;
+}
+
+.register {
+  font-family: var(--font-outfit);
+  display: flex;
+  flex-direction: column;
+  margin-top: 85px;
+  height: calc(100vh - 110px);
+  overflow-x: auto;
+  background: var(--bg-color);
+  color: #fff;
+  margin-left: calc(var(--progress-container-width) + 10px);
+  border-radius: 20px;
+  padding-top: 20px;
+  margin-right: 10px;
+}
+
+/* Sidebar */
+.register aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 100px;
+  margin-left: 10px;
+  border-radius: 20px;
+  padding: 20px 0;
+  height: calc(100vh - 110px);
+  width: var(--progress-container-width);
+  overflow-y: auto;
+  background: #da9d9d;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.progress {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  height: max-content;
+}
+
+.progress_text {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-left: 0.7rem;
+  height: max-content;
+  /* background: #333; */
+  p {
+    display: flex;
+    align-items: center;
+    height: 36px;
+  }
+}
+
+.step {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: 0.3s ease-in-out;
+}
+
+.step svg {
+  color: var(--gray-light);
+  font-size: 16px;
+}
+
+.step.completed {
+  background: var(--primary-color-2);
+  border-color: var(--primary-color-2);
+}
+
+.step.completed svg {
+  color: #fff;
+}
+
+.step.active {
+  background: #fff;
+  border-color: var(--primary-color-2);
+}
+
+.step.active svg {
+  color: var(--primary-color-2);
+}
+
+.progressLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color-2) 0%,
+    var(--primary-color-2) var(--step-progress),
+    #555 var(--step-progress),
+    #555 100%
+  );
+  z-index: 1;
+}
+
+/* Main form container */
+.step_content {
+  /* display: flex; */
+  /* width: 100%; */
+  padding: 1.3rem;
+  padding-bottom: 0;
+  padding-top: 0;
+  /* flex: 1; */
+}
+
+/* Footer */
+.register footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1rem;
+  color: #ccc;
+  width: 100%;
+}
+
+.register footer section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.register footer img {
+  width: 70px;
+}
+
+.register footer h2 {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.register footer hr {
+  width: 100%;
+  background: #333;
+  border: none;
+  height: 1px;
+}
+@media (max-width: 720px) {
+  :root {
+    --progress-container-width: 80px;
+  }
+  .progress_text {
+    display: none;
+  }
+}
