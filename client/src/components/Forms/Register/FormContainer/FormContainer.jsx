@@ -10,8 +10,9 @@ const FormContainer = ({
       <div className={styles.form_fields}>
         {formFields.map((fields) => (
           <FormField
-            key={fields.label}
+            key={fields.name || fields.label}
             label={fields.label}
+            name={fields.name}
             type={fields.type}
             input={fields.input}
             options={fields.options}

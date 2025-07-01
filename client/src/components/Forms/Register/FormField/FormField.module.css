@@ -54,3 +54,20 @@
     }
   }
 }
+.error {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-top: 5px;
+  font-weight: 500;
+}
+.fieldType input:focus,
+.fieldType select:focus {
+  border: none;
+  outline: 2px solid var(--primary-color);
+  border-radius: 25px;
+}
+.fieldType input:disabled,
+.fieldType select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

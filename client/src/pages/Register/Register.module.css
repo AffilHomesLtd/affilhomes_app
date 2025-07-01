@@ -10,13 +10,12 @@
   font-family: var(--font-outfit);
   display: flex;
   flex-direction: column;
-  align-items: start;
-  margin-top: 100px;
-  height: calc(100vh - 100px);
+  margin-top: 85px;
+  height: calc(100vh - 110px);
   overflow-x: auto;
   background: var(--bg-color);
   color: #fff;
-  margin-left: 80px;
+  margin-left: calc(var(--progress-container-width) + 10px);
   border-radius: 20px;
   padding-top: 20px;
   margin-right: 10px;
@@ -27,12 +26,15 @@
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 100px;
-  padding-bottom: 20px;
+  margin-top: 100px;
+  margin-left: 10px;
+  border-radius: 20px;
+  padding: 20px 0;
+  height: calc(100vh - 110px);
   width: var(--progress-container-width);
-  height: 100vh;
-  overflow-y: hidden;
-  background: #000;
+  overflow-y: auto;
+  background: #da9d9d;
+  background: var(--bg-color);
   display: flex;
   justify-content: center;
   z-index: 1;
@@ -154,4 +156,12 @@
   background: #333;
   border: none;
   height: 1px;
+}
+@media (max-width: 720px) {
+  :root {
+    --progress-container-width: 80px;
+  }
+  .progress_text {
+    display: none;
+  }
 }
