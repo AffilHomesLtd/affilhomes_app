@@ -90,7 +90,7 @@ const FormField = ({
             <input
               id={name}
               type="file"
-              className={styles.hiddenInput}
+              className={styles.visually_hidden}
               {...input}
               onChange={handleFileChange}
             />
@@ -112,20 +112,12 @@ const FormField = ({
           </>
         )}
 
-        {!isCheckbox &&
-        !isFile &&
-        type !== 'select' &&
-        input.type === 'file' ? (
+        {!isCheckbox && !isFile && type !== 'select' && (
           <input
             id={name}
             {...register(name)}
             {...input}
             className="visually-hidden"
-          />
-        ) : (
-          <input
-            {...register(name)}
-            {...input}
           />
         )}
       </div>
