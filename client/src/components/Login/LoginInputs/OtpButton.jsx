@@ -17,6 +17,7 @@ const OtpButton = ({ otp, setOtp }) => {
     <>
       {otp.sent && !otp.verified && (
         <button
+          aria-label="send-otp"
           type="button"
           onClick={() => sendOtpHandler(dispatch, setOtp)}
           disabled={loaders.sendOtp}
@@ -39,6 +40,7 @@ const OtpButton = ({ otp, setOtp }) => {
         </button>
       )}
       <button
+        aria-label="verify otp"
         className={`${styles.otp_btn}`}
         type="button"
         disabled={loaders.sendOtp || loaders.verifyOtp || otp.verified}
