@@ -17,7 +17,7 @@ const PropertiesList = () => {
             <button>Buy</button>
             <button>Sell</button>
             <button>Rent</button>
-            <button>Hotels and Ludge</button>
+            <button>Hotels and Lodge</button>
           </div>
           <NavLink to="/find-property">
             <p>Explore More</p>
