@@ -77,7 +77,7 @@ const TopSellerCard = ({
             <p>
               <FaStar /> {rating}
             </p>
-            <button>Explore</button>
+            <button aria-label="explore seller">Explore</button>
           </motion.div>
         )}
       </AnimatePresence>

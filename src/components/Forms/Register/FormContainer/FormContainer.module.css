@@ -1,5 +1,12 @@
 .form_fields {
   display: flex;
   flex-direction: column;
-  gap: 10px;align-items:start;padding-right:10px;
+  gap: 10px;
+  align-items: start;
+  padding-right: 10px;
+}
+.field_group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }

@@ -1,32 +1,116 @@
 :root {
   --primary-color: #ffcc00;
   --primary-color-2: #ffa600;
+  --primary-100: #fff8e1;
+  --primary-200: #ffe066;
+  --primary-300: #ffd133;
+  --primary-400: #ffc400;
+  --primary-500: #ffb700;
+
   --secondary-color: #1c1c1c;
-  --bg-color:rgba(255, 195, 0, 0.15);
-  --bg-shadow: rgba(0, 0, 0, 0.3) 0px -4px 6px 0px inset, rgba(0, 0, 0, 0.15) 4px 4px 20px 0px;
+  --bg-color: rgba(255, 195, 0, 0.15);
+  --bg-primary: #261c00;
+  --bg-surface: #fff;
+  --bg-shadow: rgba(0, 0, 0, 0.3) 0px -4px 6px inset,
+    rgba(0, 0, 0, 0.15) 4px 4px 20px;
+
+  /* === BASE TEXT COLORS === */
+  --text-50: #fafafa;
+  --text-100: #f5f5f5;
+  --text-200: #e5e5e5;
+  --text-300: #d4d4d4;
+  --text-400: #a3a3a3;
+  --text-500: #737373;
+  --text-600: #525252;
+  --text-700: #404040;
+  --text-800: #262626;
+  --text-900: #171717;
+
+  /* === PRIMARY TEXT ROLES === */
+  --text-heading: var(--text-900);
+  --text-body: var(--text-800);
+  --text-muted: var(--text-500);
+  --text-disabled: var(--text-400);
+  --text-inverse: var(--text-50);
+  --text-accent: var(--primary-color);
+  --text-link: #007aff;
+
+  /* === STATUS COLORS === */
+  --text-success: #16a34a;
+  --text-warning: #ca8a04;
+  --text-error: #dc2626;
+
+  /* === TYPOGRAPHY === */
   --font-inter: 'Inter', sans-serif;
   --font-outfit: 'Outfit', sans-serif;
   --font-sen: 'Sen', sans-serif;
   --font-syne: 'Syne', sans-serif;
   --font-work-sans: 'Work Sans', sans-serif;
+
   --text-small: clamp(12px, 1.1vw, 15px);
+  --text-base: clamp(14px, 1.2vw, 16px);
+  --text-large: clamp(18px, 1.4vw, 20px);
 }
+
+/* === DARK MODE OVERRIDE ===
+[data-theme='dark'] {
+  --bg-surface: #111;
+  --bg-color: rgba(255, 255, 255, 0.04);
+  --bg-shadow: rgba(255, 255, 255, 0.05) 0px 2px 8px;
+
+  --text-50: #171717;
+  --text-100: #262626;
+  --text-200: #404040;
+  --text-300: #525252;
+  --text-400: #737373;
+  --text-500: #a3a3a3;
+  --text-600: #d4d4d4;
+  --text-700: #e5e5e5;
+  --text-800: #f5f5f5;
+  --text-900: #fafafa;
+
+  --text-heading: var(--text-900);
+  --text-body: var(--text-800);
+  --text-muted: var(--text-500);
+  --text-disabled: var(--text-400);
+  --text-inverse: var(--text-50);
+  --text-link: #4da3ff;
+} */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-a {
-  text-decoration: none;
+
+html,
+body {
+  height: 100%;
 }
+
 body {
   background: #000;
-}
-button,
-body {
+  color: var(--text-color);
   font-family: var(--font-sen);
+  line-height: 1.6;
+  font-size: var(--text-base);
 }
-.form-container{
-    height:calc(100vh - 345px);overflow-y:auto
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.empty {
+  font-style: italic;
+  -webkit-user-select: none;
+  user-select: none;
+  color: var(--text-muted);
 }

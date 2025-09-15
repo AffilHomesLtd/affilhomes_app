@@ -1,83 +1,178 @@
 .details {
-  padding: 15px;
-  color: #fff;
+  padding: 20px;
+  color: #111;
 }
+
 .preview {
   display: flex;
+  gap: 20px;
+  margin-bottom: 2rem;
 }
+
 .preview_gallery {
   display: flex;
   flex: 1;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
-.preview_interiors {
-  width: 300px;
+
+.preview_info {
+  width: 500px;
+  height: max-content;
+  padding: 1.2rem;
+  border-radius: 1rem;
+  background: var(--bg-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
+
+.property_name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  background: var(--bg-primary);
+  padding: 0.7rem;
+  color: var(--text-100);
+  position: sticky;
+  top: 65px;
+}
+
+.property_location {
+  font-size: 0.95rem;
+  color: var(--text-300);
+}
+
 @media (max-width: 1000px) {
   .preview {
     flex-direction: column;
   }
-}
-@media (max-width: 810px) {
-  .preview {
-    flex-direction: row;
+  .preview_info {
+    width: 100%;
   }
 }
-@media (max-width: 750px) {
-  .preview {
-    flex-direction: column;
-  }
-}
+
 .gallery_header {
   display: flex;
   align-items: center;
-  /* border: 1px solid #f0e4e4; */
   justify-content: space-between;
   font-size: 14px;
-  & .for {
-    background: #ff000f;
-    padding: 5px;
-    width: 100px;
-    text-align: center;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    user-select: none;
-    -webkit-user-select: none;
-  }
-  & button {
-    padding: 5px 10px;
-    border-radius: 20px;
-    border-bottom-left-radius: 0;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    background: transparent;
-  }
 }
+.gallery_header .for {
+  background: var(--text-error);
+  padding: 6px 12px;
+  text-align: center;
+  border-radius: 0 20px 20px 0;
+  color: var(--text-50);
+  font-weight: 600;
+}
+.gallery_header button {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.gallery_header button:hover {
+  background: var(--primary-color);
+  color: var(--text-50);
+}
+
 .gallery_images .image_preview {
   position: relative;
-  & img {
-    width: 100%;
-    aspect-ratio: 16/10;
-    object-fit: cover;
-  }
-  & .view_type {
-    position: absolute;
-  }
+}
+.gallery_images .image_preview img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  max-height: 55vh;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.view_type {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  color: var(--text-50);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.image_list {
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+  overflow-x: auto;
+  padding: 5px 0;
 }
 .image_list img {
   width: 100%;
-  height: 140px;
+  height: 130px;
   object-fit: cover;
-}
-.image_list {
-  display: flex;
-  gap: 10px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 .image {
-  opacity: 0.5;
-  transition: 0.5s ease;
+  opacity: 0.6;
+  transition: 0.4s ease;
 }
 .image.active {
   opacity: 1;
+  border: 2px solid var(--primary-color);
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.preview_interiors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.interior_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f9fafc, #f3f4f6);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+.interior_info svg {
+  font-size: 1.8rem;
+  color: var(--primary-color-2);
+  margin-bottom: 0.4rem;
+}
+.count {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+}
+.label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.buy_now {
+  margin-top: 2rem;
+  width: 100%;
+  background: var(--primary-color-2);
+  color: var(--text-50);
+  border: none;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.buy_now:hover {
+  background: var(--primary-color);
 }

@@ -1,0 +1,139 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.card {
+  background: var(--bg-surface);
+  color: var(--text-color);
+  border-radius: 16px;
+  box-shadow: var(--bg-shadow);
+  padding: 2rem;
+  width: min(90%, 500px);
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  svg {
+    flex-shrink: 0;
+    font-size: 0.7rem;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: var(--text-small);
+  font-weight: 600;
+}
+
+.verified {
+  background: #e6f9ed;
+  color: #2e7d32;
+}
+
+.unverified {
+  background: #fdecea;
+  color: #c62828;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0.8rem 0;
+}
+
+.icon {
+  font-size: 1.1rem;
+  color: var(--primary-color-2);
+}
+
+.label {
+  font-size: var(--text-small);
+  color: var(--text-muted);
+}
+
+.value {
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.8rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--bg-color);
+}
+
+.statValue {
+  font-size: var(--text-large);
+  font-weight: 700;
+  color: var(--primary-color-2);
+  text-align: center;
+}
+
+.statLabel {
+  font-size: var(--text-small);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.ctaRow {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.ctaBtn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: background 0.3s ease;
+}
+
+.call {
+  background: #0077ff;
+}
+
+.email {
+  background: #ff9800;
+}
+
+.whatsapp {
+  background: #25d366;
+}

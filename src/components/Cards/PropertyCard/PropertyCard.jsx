@@ -25,23 +25,26 @@ import {
   FaArrowRight,
 } from 'react-icons/fa';
 import { RiHeartFill, RiHeartLine } from 'react-icons/ri';
-import { MdBathtub, MdVerified } from 'react-icons/md';
+import { MdVerified } from 'react-icons/md';
 import { AnimatePresence, motion } from 'framer-motion';
 import IconText from '../../IconText/IconText';
 import seller_img from '../../../assets/images/seller_img.png';
-const PropertyCard = ({
-  name,
-  seller_name,
-  details,
-  price,
-  propertyFor,
-  rentPaymentType,
-  status,
-  interiors,
-  image,
-  id,
-}) => {
-  const [isFavorite, setisFavorite] = useState(false);
+import BuyPropertyModal from '../../../pages/Details/components/BuyPropertyModal/BuyPropertyModal';
+const PropertyCard = ({ property }) => {
+  const {
+    name,
+    seller_name,
+    details,
+    price,
+    propertyFor,
+    rentPaymentType,
+    status,
+    interiors,
+    image,
+    id,
+  } = property;
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [showBuyModal, setShowBuyModal] = useState(false);
   const [cardSection, setCardSection] = useState({
     details: false,
     availability: false,
@@ -212,13 +215,22 @@ const PropertyCard = ({
           <div className={styles.action}>
             <div
               className={styles.favorite}
-              onClick={() => setisFavorite(!isFavorite)}>
+              onClick={() => setIsFavorite(!isFavorite)}>
               {isFavorite ? <RiHeartFill /> : <RiHeartLine />}
             </div>
-            <button>Buy</button>
+            <button
+              aria-label="Buy property"
+              onClick={() => setShowBuyModal(true)}>
+              Buy
+            </button>
           </div>
         </div>
       </motion.div>
+      <BuyPropertyModal
+        property={property}
+        onClose={() => setShowBuyModal(false)}
+        show={showBuyModal}
+      />
     </AnimatePresence>
   );
 };

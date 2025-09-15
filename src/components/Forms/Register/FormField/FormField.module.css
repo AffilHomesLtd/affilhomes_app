@@ -1,73 +1,162 @@
 .field {
-  border-radius: 35px;
+  border-radius: 20px;
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
   width: 100%;
-  background: #464646;
+  background: #fafafa47;
   padding: 15px 20px;
-  & p {
-    color: #ccc;
-    font-size: 16px;
-    line-height: 26px;
-    font-weight: 400;
-  }
   font-family: var(--font-outfit);
 }
-.field.input {
-  flex-direction: column;
-  align-items: start;
+
+.field p {
+  color: #ccc;
+  font-size: 16px;
 }
-.field.input .fieldType {
+
+.field.input .fieldType,
+.field.file .fieldType {
   width: 100%;
+  padding-right: 0;
+  flex-direction: column;
+  align-items: flex-start;
 }
+.field.file .fieldType {
+  padding: 15px;
+}
+
 .field.checkbox .fieldType {
   border: none;
 }
+
 .fieldType {
   padding-right: 15px;
   border-radius: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--primary-color);
-  & input {
-    width: 100%;
-
-    &[type='checkbox'] {
-      width: auto;
-    }
-  }
-  & input,
-  & select {
-    color: #ccc;
-    font-size: 15px;
-    padding: 12px;
-    background: transparent;
-    outline: none;
-    border: none;
-  }
-  & select {
-    & option {
-      color: #000;
-    }
-  }
+  border: 1px solid var(--primary-color-2);
+  background: transparent;
+  width: 100%;
+  gap: 10px;
 }
-.error {
+
+.fieldType input,
+.fieldType select {
+  border-radius: 25px;
+  color: #ccc;
+  font-size: 15px;
+  padding: 12px;
+  background: transparent;
+  outline: none;
+  border: none;
+  width: 100%;
+}
+
+.fieldType input[type='checkbox'] {
+  width: auto;
+}
+
+.fieldType select option {
+  color: #000;
+}
+
+.fieldType input:disabled,
+.fieldType select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.optional {
+  color: #888;
+  font-size: 0.85rem;
+  margin-left: 4px;
+}
+
+.field span.error {
   color: #ff4d4f;
   font-size: 14px;
   margin-top: 5px;
   font-weight: 500;
 }
-.fieldType input:focus,
-.fieldType select:focus {
+
+/* File + image upload styling */
+.field.file input[type='file'] {
+  color: #ccc;
   border: none;
-  outline: 2px solid var(--primary-color);
-  border-radius: 25px;
+  font-size: 14px;
+  background: transparent;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
 }
-.fieldType input:disabled,
-.fieldType select:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+
+.visually_hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.uploadButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--primary-color);
+  box-shadow: var(--bg-shadow);
+  color: #000;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.2s;
+  place-self: end;
+}
+
+.uploadButton:hover {
+  background-color: var(--primary-300); /* slightly darker */
+}
+
+.uploadButton svg {
+  font-size: 18px; /* icon size */
+}
+
+.file span {
+  font-size: 14px;
+  color: #242424;
+}
+
+.preview {
+  /* margin-top: 10px; */
+  padding: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 250px;
+  place-self: center;
+}
+
+.preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

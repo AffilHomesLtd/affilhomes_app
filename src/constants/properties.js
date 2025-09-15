@@ -18,6 +18,7 @@ export const properties_list = [
     name: '4 Bedroom Classic Family Home',
     seller_name: 'Property Navigators',
     price: 280000000,
+    location: 'Lagos',
     for: 'Sale',
     rent_payment_type: null,
     details: {
@@ -44,6 +45,7 @@ export const properties_list = [
     name: '3 Bedroom Contemporary',
     seller_name: 'Daniels Home',
     price: 5000000,
+    location: 'Lagos',
     for: 'Rent',
     rent_payment_type: 'yearly',
     details: {
@@ -74,6 +76,7 @@ export const properties_list = [
     name: '2 Bedroom Cozy Townhouse',
     seller_name: 'Lekki Farms',
     price: 2500000,
+    location: 'Lagos',
     for: 'Rent',
     rent_payment_type: 'yearly',
     details: {
@@ -100,6 +103,7 @@ export const properties_list = [
     name: '5 Bedroom Duplex',
     seller_name: 'Masco Builders',
     price: 420000000,
+    location: 'Lagos',
     for: 'Sale',
     rent_payment_type: null,
     details: {
@@ -126,6 +130,7 @@ export const properties_list = [
     name: '3 Bedroom Contemporary',
     seller_name: 'Daniels Home',
     price: 5000000,
+    location: 'Lagos',
     for: 'Rent',
     rent_payment_type: 'yearly',
     details: {
@@ -153,6 +158,7 @@ export const properties_list = [
     name: '4 Bedroom Classic Family Home',
     seller_name: 'Property Navigators',
     price: 280000000,
+    location: 'Lagos',
     for: 'Sale',
     rent_payment_type: null,
     details: {
@@ -179,6 +185,7 @@ export const properties_list = [
     name: '3 Bedroom Contemporary',
     seller_name: 'Daniels Home',
     price: 5000000,
+    location: 'Lagos',
     for: 'Rent',
     rent_payment_type: 'yearly',
     details: {

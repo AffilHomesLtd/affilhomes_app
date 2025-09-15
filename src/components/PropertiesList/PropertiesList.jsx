@@ -28,16 +28,7 @@ const PropertiesList = () => {
         {properties_list.map((property, index) => (
           <PropertyCard
             key={index}
-            name={property.name}
-            id={property.id}
-            seller_name={property.seller_name}
-            details={property.details}
-            price={property.price}
-            propertyFor={property.for}
-            rentPaymentType={property.rent_payment_type}
-            status={property.status}
-            interiors={property.interiors}
-            image={property.image}
+            property={property}
           />
         ))}
       </div>

@@ -4,20 +4,12 @@ import { LuWallet } from 'react-icons/lu';
 import { RiHome5Line, RiMessengerLine, RiUser3Line } from 'react-icons/ri';
 import styles from './Navbar.module.css';
 import logo from '../../assets/images/logo_affilhome.png';
+import useScreen from '../../hooks/useScreen';
+
 import { MdMenu } from 'react-icons/md';
 import { NavLink, useNavigate } from 'react-router-dom';
-const Navbar = () => {
-  const [screen, setScreen] = useState(window.innerWidth);
-  const [isMobile, setIsMobile] = useState(null);
-  useEffect(() => {
-    const handleResize = () => {
-      setScreen(window.innerWidth);
-    };
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    setIsMobile(screen <= 768);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [screen]);
+const Navbar = ({toggleSidebar}) => {
+  const{isMobile}=useScreen()
 
   const navigate = useNavigate();
 
@@ -59,7 +51,7 @@ const Navbar = () => {
           <p>Account</p>
         </div>
         {isMobile && (
-          <div className={`${styles.menu} ${styles.navlist}`}>
+          <div className={`${styles.menu} ${styles.navlist}`} onClick={toggleSidebar}>
             <MdMenu />
           </div>
         )}

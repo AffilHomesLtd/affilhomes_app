@@ -1,0 +1,152 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+
+.modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.8rem;
+  width: 90%;
+  max-width: 480px;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #444;
+  cursor: pointer;
+}
+
+.title {
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.planGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.planCard {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: var(--text-100);
+  cursor: pointer;
+  transition: all 0.25s;
+  font-weight: 500;
+}
+
+.planCard:hover {
+  background: var(--primary-100);
+  border-color: var(--primary-color);
+}
+
+.planCard.active {
+  border-color: var(--primary-color);
+  background: var(--primary-100);
+  color: #111;
+}
+
+.paymentSummary {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.paymentSummary p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.terms {
+  margin-bottom: 1rem;
+}
+
+.readTerms {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.buyBtn {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 10px;
+  background: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s;
+  font-size: 1rem;
+}
+
+.buyBtn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.buyBtn:hover:not(:disabled) {
+  background: var(--primary-500);
+}
+
+/* Terms popup */
+.termsModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1300;
+}
+
+.termsContent {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+}
+
+.closeTerms {
+  margin-top: 1rem;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}

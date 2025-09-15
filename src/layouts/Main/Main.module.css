@@ -12,7 +12,7 @@
 .sidebar {
   position: fixed;
   left: 0;
-  width: 200px;
+  width: 220px;
   overflow: hidden;
   overflow-y: auto;
   height: calc(100vh - 65px);
@@ -21,8 +21,34 @@
   background: #261c00;
   padding-top: 5px;
 }
+
+.sidebarBlur {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.sidebarMobile {
+  border-radius: 15px;
+  overflow: hidden;
+  background: #261c00;
+  padding-top: 5px;
+  position: fixed;
+  left: 25px;
+  top: 75px;
+  width: 280px;
+  z-index: 20;
+}
+
 .main_body {
-  margin: 65px 0 0 195px;
+  margin: 65px 0 0 215px;
 } /* 
 .footer {
   position: fixed;

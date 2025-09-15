@@ -6,19 +6,23 @@ import { MdAccountBalanceWallet, MdVerifiedUser } from 'react-icons/md';
 import { useEffect, useMemo, useState } from 'react';
 
 const steps = [
-  { path: '/register/personal-info', icon: <FiUser />, label: 'Personal Info' },
   {
-    path: '/register/verification',
+    path: '/auth/register/personal-info',
+    icon: <FiUser />,
+    label: 'Personal Info',
+  },
+  {
+    path: '/auth/register/kyc',
     icon: <MdVerifiedUser />,
     label: 'KYC Verification',
   },
   {
-    path: '/register/transaction',
+    path: '/auth/register/transaction',
     icon: <MdAccountBalanceWallet />,
     label: 'Transaction Setup',
   },
-  { path: '/register/profile', icon: <FiImage />, label: 'Profile Setup' },
-  { path: '/register/review', icon: <FiHome />, label: 'Review' },
+  { path: '/auth/register/profile', icon: <FiImage />, label: 'Profile Setup' },
+  { path: '/auth/register/review', icon: <FiHome />, label: 'Review' },
 ];
 
 const LOCAL_STORAGE_KEY = 'registerStepsCompleted';
@@ -33,6 +37,8 @@ const Register = () => {
       return [];
     }
   });
+
+  // markStepCompleted(currentStepIndex);
 
   // Save to localStorage whenever it changes
   useEffect(() => {
